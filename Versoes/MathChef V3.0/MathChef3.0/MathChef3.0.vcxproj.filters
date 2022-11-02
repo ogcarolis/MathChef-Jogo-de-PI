@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Arquivos de Origem\functions">
+      <UniqueIdentifier>{3c941fbc-6507-46d1-905c-8f99da151cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\headers">
+      <UniqueIdentifier>{208b0766-e740-4e04-87e6-9b3ff24e5103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\structs">
+      <UniqueIdentifier>{fd01423f-ee86-451c-a951-ec571c8378a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -21,13 +30,28 @@
     <ClCompile Include="main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="functions\createFoods.cpp">
+      <Filter>Arquivos de Origem\functions</Filter>
+    </ClCompile>
     <ClCompile Include="functions\event.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\drawFoods.cpp">
+      <Filter>Arquivos de Origem\functions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="structs\foods.h">
+      <Filter>Arquivos de Origem\structs</Filter>
+    </ClInclude>
     <ClInclude Include="headers\event.h">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Arquivos de Origem\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\drawFoods.h">
+      <Filter>Arquivos de Origem\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\createFoods.h">
+      <Filter>Arquivos de Origem\headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

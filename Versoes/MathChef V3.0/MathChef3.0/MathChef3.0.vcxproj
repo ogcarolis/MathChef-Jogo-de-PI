@@ -154,11 +154,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="functions\createFoods.cpp" />
+    <ClCompile Include="functions\drawFoods.cpp" />
     <ClCompile Include="functions\event.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="headers\createFoods.h" />
+    <ClInclude Include="headers\drawFoods.h" />
     <ClInclude Include="headers\event.h" />
+    <ClInclude Include="structs\foods.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
