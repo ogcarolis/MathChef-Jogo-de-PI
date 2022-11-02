@@ -1,0 +1,6 @@
+﻿  main.c
+C:\Users\aline\Documents\Visual Studio 2019\MathChef2.0\MathChef2.0\main.c(112,43): warning C4047: '<=': 'numero *' difere em níveis de indireção de 'int'
+C:\Users\aline\Documents\Visual Studio 2019\MathChef2.0\MathChef2.0\main.c(138,62): warning C4047: '!=': 'int' difere em níveis de indireção de 'numero *'
+C:\Users\aline\Documents\Visual Studio 2019\MathChef2.0\MathChef2.0\main.c(290,70): warning C4028: parâmetro formal 2 diferente da declaração
+C:\Users\aline\Documents\Visual Studio 2019\MathChef2.0\MathChef2.0\main.c(421,37): warning C4020: 'moverIngredientes': muitos parâmetros reais
+  MathChef2.0.vcxproj -> C:\Users\aline\Documents\Visual Studio 2019\MathChef2.0\Debug\MathChef2.0.exe

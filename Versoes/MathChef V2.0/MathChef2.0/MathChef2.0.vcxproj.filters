@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Recurso">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Origem\img">
+      <UniqueIdentifier>{73d904f6-0514-4e45-b589-87bc878004b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\cinco.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\dois.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\nove.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\oito.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\quatro.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\salada.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\seis.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\sete.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\tres.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\um.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+    <Image Include="img\zero.png">
+      <Filter>Arquivos de Origem\img</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
