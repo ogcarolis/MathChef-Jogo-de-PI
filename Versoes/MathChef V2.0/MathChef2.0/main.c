@@ -13,7 +13,7 @@
 typedef struct numero numero;
 struct numero {
     int valor;
-    int valorI[5];
+    float x, y;
 };
 
 typedef struct ingrediente ingrediente;
@@ -47,30 +47,9 @@ void moverIngredientes(ingrediente* ing[]);
 void exibirIngrediente(ingrediente* ing, ALLEGRO_DISPLAY* janela);
 ingrediente* selecionarIngrediente(ingrediente* ing[], ALLEGRO_EVENT* evento);
 
-numero* atualizarNumero(numero* n);
 void exibirNumero(numero* n, int x, int y);
 void sortearNumeros(numero* n[], int tipo);
 
-numero* atualizarNumero(numero* n) {
-    int i = 0, fim = 5;
-    int vet[5];
-    int numero = n->valor;
-
-    for (i = 0; i < fim; i++) {
-        vet[i] = numero % 10;
-
-        if (numero == 0) {
-            vet[i] = -1;
-        }
-        numero = numero / 10;
-    }
-
-    for (i = 0; i < fim; i++) {
-        n->valorI[i] = vet[fim - i - 1]; 
-    }
-   
-    return n;
-}
 
 void sortearNumeros(numero* n[], int tipo) {
     bool correto = false;
@@ -81,21 +60,19 @@ void sortearNumeros(numero* n[], int tipo) {
     numeroOperacao = malloc(sizeof(numero));
 
     do {
-        s1 = rand() % 100 + 1;
-        s2 = rand() % 100 + 1;
+        s1 = rand() % 100 + 2;
+        s2 = rand() % 100 + 2;
 
         switch (tipo) {
         case 1:
-            if ((s1 > 1 && s2 > 1) && (s1 != s2)) {
+            if (s1 != s2) {
                 numeroOperacao->valor = s1 + s2;
-                if (numeroOperacao->valor > 1) {
-                    correto = true;
-                }
+                correto = true;
             }
             break;
 
         case 2:
-            if ((s1 > 1 && s2 > 1) && (s1 != s2)) {
+            if (s1 != s2) {
                 if (s1 - s2 > 1) {
                     numeroOperacao->valor = s1 - s2;
                     correto = true;
@@ -107,16 +84,14 @@ void sortearNumeros(numero* n[], int tipo) {
             break;
 
         case 3:
-            if ((s1 > 1 && s2 > 1) && (s1 != s2)) {
+            if (s1 != s2) {
                 numeroOperacao->valor = s1 * s2;
-                if (numeroOperacao <= 1000) {
-                    correto = true;
-                }
+                correto = true;  
             }
             break;
 
         case 4:
-            if ((s1 > 1 && s2 > 1) && (s1 != s2)) {
+            if (s1 != s2) {
                 if (s1 / s2 > 1) {
                     numeroOperacao->valor = s1 / s2;
                     correto = true;
@@ -129,15 +104,12 @@ void sortearNumeros(numero* n[], int tipo) {
         }
     } while (correto == false);
 
-    numeroOperacao = atualizarNumero(numeroOperacao);
-
     do {
-        int valorVetor = rand() % numeroOperacao->valor + 1;
+        int valorVetor = rand() % numeroOperacao->valor + 2;
 
         n[i] = malloc(sizeof(numero));
         if ((valorVetor > 1) && (valorVetor != numeroOperacao) && (valorVetor != s1) && (valorVetor != s2)) {
             n[i]->valor = valorVetor;
-            n[i] = atualizarNumero(n[i]);
             i++;
         }
 
@@ -154,9 +126,6 @@ void sortearNumeros(numero* n[], int tipo) {
         if (i1 != i2) {
             n[i1]->valor = s1;
             n[i2]->valor = s2;
-
-            n[i1] = atualizarNumero(n[i1]);
-            n[i2] = atualizarNumero(n[i2]);
         }else {
             l++;
         }
@@ -182,104 +151,6 @@ void criarIngredientes(ingrediente* ing[]) {
     }
 }
 
-void exibirNumero(numero* numero, int x, int y) {
-    ALLEGRO_BITMAP* img;
-
-    for (int i = 0; i < 5; i++) {
-        if (numero->valorI[i] > 0) {
-
-            if (i > 0) {
-                x += 13;
-            }
-
-            switch (numero->valorI[i]) {
-            case 0:
-                img = al_load_bitmap("img/zero.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 1:
-                img = al_load_bitmap("img/um.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 2:
-                img = al_load_bitmap("img/dois.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 3:
-                img = al_load_bitmap("img/tres.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 4:
-                img = al_load_bitmap("img/quatro.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 5:
-                img = al_load_bitmap("img/cinco.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 6:
-                img = al_load_bitmap("img/seis.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 7:
-                img = al_load_bitmap("img/sete.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 8:
-                img = al_load_bitmap("img/oito.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            case 9:
-                img = al_load_bitmap("img/nove.png");
-                al_set_target_bitmap(img);
-
-                al_set_target_bitmap(al_get_backbuffer(janela));
-                al_draw_bitmap(img, x, y, 0);
-                break;
-
-            default:
-                break;
-            }
-        }
-    }
-}
-
 void exibirIngrediente(ingrediente* ing, ALLEGRO_DISPLAY* janela) {
     al_set_target_bitmap(ing->img);
 
@@ -299,7 +170,6 @@ ingrediente* selecionarIngrediente(ingrediente* ing[], ALLEGRO_EVENT evento) {
     }
 
     return NULL;
-  
 }
 
 
@@ -313,9 +183,9 @@ void moverIngredientes(ingrediente* ing[]) {
     bool value = true, clique = false;
     
     while (value) {
-        for (i = 0; i < QTD_INGREDIENTE; i++) {
-            al_wait_for_event(eventos, &evento);
+        al_wait_for_event(eventos, &evento);
 
+        for (i = 0; i < QTD_INGREDIENTE; i++) {
             if (ing[i]->x >= -1 && ing[i]->x <= WIDTH_TELA * (i + 1) && !ing[i]->selecionado) {
                 ing[i]->x += 1.0;
             }
@@ -328,13 +198,12 @@ void moverIngredientes(ingrediente* ing[]) {
                 xn = (ing[i]->x + WH_INGREDIENTE) - 20;
                 yn = (ing[i]->y + WH_INGREDIENTE) - 8;
 
-                exibirIngrediente(ing[i], janela);
-                exibirNumero(ing[i]->numero, xn, yn);     
+                exibirIngrediente(ing[i], janela);    
             }
+        }
 
-            if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-                itemSelecionado = selecionarIngrediente(ing, evento);
-            }
+        if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+            itemSelecionado = selecionarIngrediente(ing, evento);
         }
 
         if (itemSelecionado != NULL) {
@@ -363,7 +232,6 @@ void moverIngredientes(ingrediente* ing[]) {
 
         al_flip_display();
         al_clear_to_color(al_map_rgb(0, 0, 0));
-        exibirNumero(numeroOperacao, 680, 100);
     }
 }
 
@@ -419,9 +287,7 @@ int main(void) {
 
     criarIngredientes(ingredientes);
     moverIngredientes(ingredientes, janela);
-    al_flip_display();
    
-
     destroy();
     return 0;
 }
