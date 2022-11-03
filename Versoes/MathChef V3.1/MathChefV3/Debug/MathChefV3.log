@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\carol\source\repos\MathChefV3\MathChefV3\main.cpp(43,11): warning C4101: 'x_botao': variável local não referenciada
+C:\Users\carol\source\repos\MathChefV3\MathChefV3\main.cpp(43,20): warning C4101: 'y_botao': variável local não referenciada
+  MathChefV3.vcxproj -> C:\Users\carol\source\repos\MathChefV3\Debug\MathChefV3.exe
