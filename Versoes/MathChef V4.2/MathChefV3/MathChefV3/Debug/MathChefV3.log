@@ -1,0 +1,7 @@
+﻿  manipularEntrada.cpp
+C:\Users\carol\source\repos\MathChefV3\MathChefV3\functions\manipularEntrada.cpp(11,44): warning C4838: a conversão de 'int' em 'char' requer uma conversão de restrição
+  setup.cpp
+  main.cpp
+  Gerando Código...
+main.obj : error LNK2019: símbolo externo não resolvido, "void __cdecl manipularEntrada(union ALLEGRO_EVENT,char * const)" (?manipularEntrada@@YAXTALLEGRO_EVENT@@QAD@Z), referenciado na função _main
+C:\Users\carol\source\repos\MathChefV3\Debug\MathChefV3.exe : fatal error LNK1120: 1 externo não resolvidos
